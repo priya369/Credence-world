@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Modal Example</h2>
+     <p id="demo"></p>
+     <p id="demo1"></p>
+     <p id="demo2"></p>
+     <p id="demo3"></p>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+           <input text="text" id="name" name="fname"></input>
+           <input text="text" id="lastname" name="lname"></input>
+           <input  text="text" id="dept" name="dept"></input>
+           <input text="number" id="as" name="roll"></input>
+           <div class="modal-footer">
+          <button type="button" class="btn btn-default"  onclick="my()" data-dismiss="modal">submit</button>
+        </div>
+         </form>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<script>
+function my(){
+var x=document.getElementById("name").value;
+var y=document.getElementById("lastname").value;
+var z=document.getElementById("dept").value;
+var s=document.getElementById("as").value;
+ document.getElementById("demo").innerHTML="firtsname"+x;
+  
+}
+</script>
+</body>
+</html>
