@@ -11,34 +11,571 @@
 </head>
 <body>
 <header class="header" id="myheader">
+    <img src="img/logo.png" alt="logo" />
 <center><h1 class="font">Nielsen Report Builder</h1></center>
 </header>
 <div class="container">
     <div class="row">
-        <div class="col-lg-4" style=""><ul class="price">
-            <li class="cardh">Report Configuration<button class="material-icons" style="margin-left: 150px;border: 2px solid; " onclick="location.href ='i.html'">&#xe22b;</button></li>
-            <li>Report Type:</li>
-            <li>Report Name:</li>
-            <li>Report Description:</li>
-            <li>Permission:</li>
-            <li>Output Folder:</li>
-            <li>sample:</li>
-          </ul></div>
-        <div class="col-lg-4"><ul class="price">
-            <li class="cardh">Data Range<button class="material-icons" style="margin-left: 150px;border: 2px solid; " onclick="location.href ='date.html'">&#xe22b;</button></li>
-            <li>Start Date:</li>
-            <li>End Date:</li>
-            <li>Days Of week:</li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul></div>
-        <div class="col-lg-3" style="background-color:lavender;">.col-sm-4</div>
-        <div class="col-lg-3" style="background-color:lavender;">.col-sm-4</div>
-      </div>
+        <div class="col-md-4">
+          <ul class="price">
+            <li class="cardh">Report Configuration<button class="material-icons" style="margin-left: 150px;" data-toggle="modal" data-target="#myModal">&#xe22b;</button></li>
+          <div id="valid" class="uvalid">
+          </div>
+          </ul> 
+        </div>
+       <div class="modal fade" id="myModal" role="dialog">
+             <div class="modal-dialog">
+              <!-- Modal content-->
+               <div class="modal-content">
+                                         <div class="modal-header">
+                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                              <h4 class="modal-title">Report Configuration</h4>
+                                          </div>
+                   <div class="modal-body">
+                      <center>
+                                   <form>
+                                       <fieldset>
+                                          <div class="row">
+                                              <div class="col-25">
+                                              <label for="pr">Product:</label>
+                                             </div>
+                                               <div class="col-75">
+                                                <input type="text" id="pr" name="product"></input>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                                     <div class="col-25">
+                                                     <label for="rt">ReportType:</label>
+                                                    </div>
+                                                      <div class="col-75">
+                                                       <input type="text" id="rt" name="reportType"></input>
+                                                     </div>
+                                           </div>
+                                           <div class="row">
+                                                    <div class="col-25">
+                                                         <label for="repotype">ReportName:</label>
+                                                     </div>
+                                                     <div class="col-75">
+                                                           <input type="text" id="rn" name="reportName">
+                                                       </div>
+                                            </div>
+                                           <div class="row">
+                                                       <div class="col-25">
+                                                          <label for="rd">Report Description:</label>
+                                                       </div>
+                                                       <div class="col-75">
+                                                              <input type="text" id="rd" name="reportDescription">
+                                                          </div>
+                                              </div>
+                                             <div class="row">
+                                                           <div class="col-25">
+                                                                <label for="prm">Permission:</label>
+                                                             </div>
+                                                              <div class="col-75">
+                                                                  <input type="text" id="prm" name="Permission">
+                                                                </div>
+                                                </div>
+                                               <div class="row">
+                                                             <div class="col-25">
+                                                                  <label for="of">OutputFolder:</label>
+                                                               </div>
+                                                               <div class="col-75">
+                                                                   <input type="text" id="of" name="Outputfolder">
+                                                                 </div>
+                                                  </div>
+                                                 <div class="row">
+                                                                <div class="col-25">
+                                                                     <label for="sample">Sample:</label>
+                                                                  </div>
+                                                                  <div class="col-75">
+                                                                       <input type="text" id="sample" name="Sample">
+                                                                   </div>
+                                                   </div>
+                                                   <div class="row">
+                                                                 <div class="col-25">
+                                                                              <button type="submit" onclick="my()" data-dismiss="modal">submit</button>
+                                                                   </div>
+                                                                  
+                                                     </div>
+                              </fieldset>
+                        </form>
+                  </center>
+                </div>
+              </div> 
+            </div>
+          </div>
+          <!-- DataRange  start------------------------------------------------------->
+          <div class="col-md-4"><ul class="price">
+              <li class="cardh">Date Range<button class="material-icons" style="margin-left: 212px;"  data-toggle="modal" data-target="#Modal">&#xe22b;</button></li>
+           <div id="valid1" class="uvalid">
 
+           </div>
+            </ul>
+          </div>    
+          <div class="modal fade" id="Modal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                                 <div class="modal-header">
+                                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Date Range</h4>
+                                  </div>
+                              <div class="modal-body">
+                                      <center>
+                                              <form>
+                                                     <div class="row">
+                                                               <div class="col-25">
+                                                                  <label for="sdate">Start Date:</label>
+                                                               </div>
+                                                                <div class="col-75">
+                                                                  <input type="date" id="sdate" name="StartDate">
+                                                                  </div>
+                                                       </div>
+                                                      <div class="row">
+                                                                <div class="col-25">
+                                                                     <label for="edate">End Date:</label>
+                                                                  </div>
+                                                                  <div class="col-75">
+                                                                     <input type="date" id="edate" name="EndDate">
+                                                                    </div>
+                                                       </div>
+                                                       <div class="row">
+                                                                  <div class="col-25">
+                                                                       <label for="week">Days of Week:</label>
+                                                                    </div>
+                                                                   <div class="col-75">
+                                                                          <select id="week" name="dayweek">
+                                                                                    <option value="m-su">M-SU</option>
+                                                                                     <option value="TU-M">TU-M</option>
+                                                                                     <option value="W-TU">W-TU</option>
+                                                                                        <option value="TH-W">TH-W</option>
+                                                                                      <option value="F-TH">F-TH</option>
+                                                                                           <option value="Sa-F">SA-F</option>
+                                                                                             <option value="SU-Sa">SU-SA</option>
+                                                                            </select>
+                                                                     </div>
+                                                           </div>
+                                                            <div class="row">
+                                                                    <div class="col-25">
+                                                                            <button type="submit" onclick="daterange()" data-dismiss="modal">submit</button>
+                                                                      </div>
+                                                                   
+                                                             </div>
+                    </fielset>
+                   </form>
+                  </center>
+                  </div>
+                  
+                </div>
+                
+              </div>
+            </div>
+ <!-- Demographic  start------------------------------------------------------->
+                 <div class="col-md-4">
+                                <ul class="price">
+                              <li class="cardh">Demographics<button class="material-icons" style="margin-left: 190px;" data-toggle="modal" data-target="#demograph">&#xe22b;</button></li>
+                              <div id="valid2" class="uvalid">
+
+                              </div>   
+                            </ul>
+                   </div>
+                  <div class="modal fade" id="demograph" role="dialog">
+                          <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                                <div class="modal-content">
+                                       <div class="modal-header">
+                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                             <h4 class="modal-title">Demographics</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <center>
+                                          <form id="myform">
+                                              <div class="row">
+                                                  <label class = "checkbox-inline">
+                                                      <input type = "checkbox"  id="households"value ="Households">Households
+                                                   </label>
+                                                   <label class = "checkbox-inline">
+                                                      <input type="checkbox" name="graph" id="persons" value="Persons">Persons
+                                                   </label>
+                                                   <label class = "checkbox-inline">
+                                                      <input type = "checkbox" name="graph" id="male" value ="Male">Male
+                                                   </label>
+                                                   <label class = "checkbox-inline">
+                                                      <input type = "checkbox" name="graph" id="female" value ="Female">Female
+                                                   </label>
+                                                   <label class = "checkbox-inline">
+                                                      <input type = "checkbox" name="graph" id="women" value ="Workingwomen">Working Women
+                                                   </label>
+                                                  </div>
+                                                <div class="row">
+                                                               <div class="col-25">
+                                                                  <label for="sa">Start age</label>
+                                                                </div>
+                                                                 <div class="col-75">
+                                                                     
+                                                                      <select id="sa" name="dayweek">
+                                                                        <option value="2">2</option>
+                                                                     <option value="6">6</option>
+                                                                     <option value="9">9</option>
+                                                                     <option value="11">11</option>
+                                                                     <option value="15">15</option>
+                                                                      <option value="18">18</option>
+                                                                     <option value="21">21</option>
+                                                                      <option value="25">25</option>
+                                                                      <option value="30">30</option>
+                                                                      <option value="35">35</option>
+                                                                       <option value="40">40</option>
+                                                                      <option value="45">45</option>
+                                                                      <option value="50">50</option>
+                                                                      <option value="55">55</option>
+                                                                     <option value="65">65+</option>
+                                                                     </select>
+                                                                   </div>
+                                                </div>
+                                                <div class="row">
+                                                            <div class="col-25">
+                                                            <label for="ea">End age </label>
+                                                            </div>
+                                                          <div class="col-75">
+                                                                <select id="ea" name="dayweekk">
+                                                                    <option value="2">2</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="9">9</option>
+                                                                    <option value="11">11</option>
+                                                                    <option value="15">15</option>
+                                                                     <option value="18">18</option>
+                                                                    <option value="21">21</option>
+                                                                     <option value="25">25</option>
+                                                                     <option value="30">30</option>
+                                                                     <option value="35">35</option>
+                                                                      <option value="40">40</option>
+                                                                     <option value="45">45</option>
+                                                                     <option value="50">50</option>
+                                                                     <option value="55">55</option>
+                                                                    <option value="65">65+</option>
+                                                              </select>
+                                                          </div>  
+                                                        </div>
+                                                     <div class="row">
+                                                                <div class="col-25">
+                                                                     <button type="submit" onclick="demograph()" data-dismiss="modal">submit</button>
+                                                                 </div>
+                                                                 
+                                                      </div>
+                                          </form>
+                                        </center>
+                                        </div>
+                                 </div>
+
+                           </div>
+                    </div>
+         </div>
+         <!--program selection--------------------------------------------------->
+     <div class="row" style="margin-top: 10px;">
+                        <div class="col-md-4">
+                                <ul class="price">
+                                 <li class="cardh">Program Selection<button class="material-icons" style="margin-left: 168px;" data-toggle="modal" data-target="#prosel">&#xe22b;</button></li>
+                                <div id="valid4" class="uvalid">
+
+                                </div>
+                                </ul>
+                         </div>
+                         <div class="modal fade" id="prosel" role="dialog">
+                            <div class="modal-dialog">
+                            
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">Program Selection</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <center>
+                                  <form id="psel"> 
+                                    <div class="row">
+                                        <div class="col-75" style="margin-left: 30px;">
+                                          <Label>originator</Label>
+                                          <select id="org" name="originator" onchange="test()">
+                                            <option>select</option>
+                                            <option value="CNN">CNN</option>
+                                            <option value="ESPN">ESPN</option>
+                                            <option value="CNBC">CNBC</option>
+                                            <option value="NFLN">NFLN</option>
+                                          </select>
+                                        </div>
+                                    
+                                             <div class="col-25">
+                                                <label for="">Program:</label>
+                                              </div>
+                                              <div class="multiselect">
+                                               
+                                              </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-75" style="margin-left: 30px;">
+                                                <label for="gener">Genre:</label>
+                                              <select id="gener" name="orignator">
+                                                <option value="NEWS">NEWS</option>
+                                                <option value="SportsEvent">SPORTS EVENT</option>
+                                                <option value="">AUDIENCE PARTICIPATION</option>
+                                                <option value="">GENERAL VARIETY</option>
+                                                <option value="">SPORTS COMMENTARY</option>
+                                                <option value="">CONVERSATIONS,COLLOQUIES</option>
+                                                <option value="">NEWS DOCUMENTARY</option>
+                                                <option value="">GENERAL DRAMA</option>
+                                                <option value="">SITUATION COMEDY</option>
+                                                <option value="">DAYTIME DRAMA</option>
+                                              </select>
+                                            </div>
+                                                  <div class="col-75" style="margin-left: 20px;">
+                                                      <label for="generd">Genre Details:</label>
+                                                    <select id="generd" name="orignator">
+                                                      <option value="NEWS-GENERAL">NEWS-GENERAL</option>
+                                                      <option value="">COLLEGE FOOTBALL-REGULAR SEA</option>
+                                                      <option value="">MOTOR SPTS-NASCR NEXTEL/WINSTN</option>
+                                                      <option value="">MLB BASEBALL-PREVIEW/WRAP</option>
+                                                      <option value="">SPORTS HIGHLIGHTS</option>
+                                                      <option value="">DOCUMENTARY-OTHER</option>
+                                                      <option value="">COLLEGE FOOTBALL COMMENTARIES</option>
+                                                      <option value="">INSTRUCT/INFO-HOME IMPROVEME</option>
+                                                      <option value="">INTERVIEW/TALK-ENTERTAINMENT</option>
+                                                      <option value="">SERIES-REALITY</option>
+                                                    </select>
+                                                  </div>
+                                      </div>
+                                      
+                                              <div class="row" style="margin-top: 60px;
+                                              margin-left: 60px;">
+                                                    <div class="col-25">
+                                                     <button type="submit" onclick="test2()" data-dismiss="modal">submit</button>
+                                                </div>
+                                               
+                                </div>
+                                 </form>
+                                </center>
+                                </div>
+                                
+                              </div>
+                              
+                            </div>
+                          </div>
+  <!--------Metrics  started----------------------------------------------------------------->
+  <div class="col-md-4">
+    <ul class="price">
+          <li class="cardh">Metrics<button class="material-icons" style="margin-left: 245px;" data-toggle="modal" data-target="#metric">&#xe22b;</button></li>
+          <div id="valid5" class="uvalid">
+
+          </div>
+    </ul>
+</div>
+<div class="modal fade" id="metric" role="dialog">
+  <div class="modal-dialog">    
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Metrics</h4>
+      </div>
+      <div class="modal-body">
+  <center>
+        <form id="metrics">
+            <div class="row"  >
+                <div class="col-25" style="margin-left: -29px;">
+                    <input type = "checkbox" id="usa" name="US AA%" value ="Hunderedths">  <label class="" >US AA%:
+                  </label>
+                </div>
+                <div class="col-75">
+                 <div class="div1"  style="margin-left: 25px;"><center style="margin-top: 8px;">Hunderedths</center></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25"  style="margin-left: -21px;">
+                  <input type = "checkbox" id="usap" name="US AA proj" value ="Units"> <label for="repotype">US AA proj:</label>
+                </div>
+                <div class="col-75">
+                  <div class="div1" style="margin-left: 19px;"><center style="margin-top: 8px;">Units</center></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25" style="margin-left: -21px;">
+                  <input type = "checkbox" id="usas" name="US share%" value ="Hunderedths">  <label for="rd">US share%:</label>
+                </div>
+                <div class="col-75">
+                  <div class="div1" style="margin-left: 19px;"><center style="margin-top: 8px;">Hunderedths</center></div>
+                    </div>
+              </div>
+              <div class="row">
+                <div class="col-25" style="margin-left: -7px;">
+                  <input type = "checkbox" id="usah" name="US HUT/PUT %" value ="Hunderedths"> <label for="ush">US HUT/PUT %:</label>
+                </div>
+                <div class="col-75">
+                  <div class="div1" style="margin-left: 6px;"><center style="margin-top: 8px;">Hunderedths</center></div>
+                    </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <input type ="checkbox" id="usahp" name="US HUT/PUT proj" value ="Units">  <label for="ushp">US HUT/PUT proj:</label>
+                </div>
+                <div class="col-75">
+                  <div class="div1"><center style="margin-top: 8px;">Units</center></div>
+                    </div>
+              </div>    
+              <div class="row">
+                  <div class="col-25">
+                  <button type="submit" onclick="metrics()" data-dismiss="modal">submit</button>
+                  </div>
+              </div>
+       </form>
+      </center>
+      </div>
+      
+    </div>
+    
+  </div>
 </div>
 
-<script src="scroll.js"></script>
+
+
+  <!--------Metrics ended----------------------------------------------------------------->
+
+  <!--------Program Details----------------------------------------------------------------->
+                <div class="col-md-4">
+                              <ul class="price">
+                                    <li class="cardh">Program Details<button class="material-icons" style="margin-left: 180px;" data-toggle="modal" data-target="#prodet">&#xe22b;</button></li>
+                                    <div id="valid6" class="uvalid">
+
+                                    </div>
+                              </ul>
+                  </div>
+                <div class="modal fade" id="prodet" role="dialog">
+                              <div class="modal-dialog">    
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Program Details</h4>
+                                  </div>
+                                  <div class="modal-body">
+                              <center>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-25">
+                                              <label for="td">Total Duration:</label>
+                                            </div>
+                                            <div class="col-75">
+                                              <select id="td" name="td">
+                                                <option value="Whole Number">Whole Number</option>
+                                                </select>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-25">
+                                              <label for="ts">Telecast startTime:</label>
+                                            </div>
+                                            <div class="col-75">
+                                              <select id="ts" name="ts">
+                                                <option value="h:mm AM/PM">h:mm AM/PM</option>
+                                                </select>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-25">
+                                              <label for="te">Telecast Endtime:</label>
+                                            </div>
+                                            <div class="col-75">
+                                              <select id="te" name="te">
+                                                <option value="h:mm AM/PM">h:mm AM/PM</option>
+                                                </select>
+                                                </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-25">
+                                                <label for="nt"># of Telecast:</label>
+                                              </div>
+                                              <div class="col-75">
+                                                <select id="nt" name="nt">
+                                                  <option value="Whole Number">Whole Number</option>
+                                                  </select>
+                                                  </div>
+                                            </div>
+                                          
+                                          <div class="row">
+                                            <div class="col-25">
+                                              <button type="submit" onclick="prdetails()" data-dismiss="modal">submit</button>
+                                              </div>
+                                          </div>
+                                   </form>
+                                  </center>
+                                  </div>
+                                  
+                                </div>
+                                
+                              </div>
+                            </div>
+       </div>
+     <div class="row" style="margin-top: 10px;">
+         <div class="col-md-4">
+               <ul class="price">
+                     <li class="cardh">Report Option<button class="material-icons" style="margin-left: 198px;" data-toggle="modal" data-target="#reportop">&#xe22b;</button></li>
+               <div id="valid7" class="uvalid">
+
+               </div>
+              </ul>
+           </div>
+           <div class="modal fade" id="reportop" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Report Option</h4>
+                </div>
+                <div class="modal-body">
+                  <center>
+                  <form id="report">
+                    <div class="row">
+                      <label class = "checkbox-inline">
+                          <input type = "checkbox" id="ls" value ="Live+SD">Live+SD
+                       </label>
+                       <label class = "checkbox-inline">
+                          <input type="checkbox" id="l" value="Long">Long
+                       </label>
+                       <label class = "checkbox-inline">
+                        <input type="checkbox" id="lv" value="Live">Live
+                     </label>
+                      </div>
+                      <div class="row">
+                          <div class="col-25">
+                            <button type="submit" onclick="reportop()" data-dismiss="modal">submit</button>
+                            </div>
+                        </div>
+                 </form>
+                </center>
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+
+
+    </div>
+
+       <div class="col-lg-12">
+       <div class="row">
+         <div class="col-25">
+          <button type="submit" value="submit" style="margin-top:60px;margin-right: -850px;" onclick="">Generate Report</button>
+         </div>
+       </div>
+       </div>
+</div>
+
+<script src="scroll.js">
+  
+
+</script>
 </body>
 </html>
